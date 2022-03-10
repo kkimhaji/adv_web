@@ -10,6 +10,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="HTML File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -27,13 +28,17 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Problems" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -52,6 +57,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="NodeJSConfigurationType">
+      <EXTENSION ID="com.jetbrains.nodejs.run.NodeJSStartBrowserRunConfigurationExtension">
+        <browser start="true" />
+      </EXTENSION>
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -62,7 +73,7 @@
       <option name="presentableId" value="Default" />
       <updated>1646895262346</updated>
       <workItem from="1646895263478" duration="196000" />
-      <workItem from="1646895987893" duration="485000" />
+      <workItem from="1646895987893" duration="3957000" />
     </task>
     <servers />
   </component>
@@ -74,5 +85,29 @@
       <screen x="0" y="0" width="1792" height="1120" />
     </state>
     <state x="384" y="138" key="#Project_Structure/0.0.1792.1120@0.0.1792.1120" timestamp="1646895283145" />
+    <state x="601" y="287" key="#Servers" timestamp="1646898520663">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="601" y="287" key="#Servers/0.0.1792.1120@0.0.1792.1120" timestamp="1646898520663" />
+    <state x="359" y="219" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1646900072603">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="359" y="219" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1646900072603" />
+    <state x="682" y="269" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1646900069949">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="682" y="269" key="#com.intellij.ide.macro.MacrosDialog/0.0.1792.1120@0.0.1792.1120" timestamp="1646900069949" />
+    <state x="405" y="196" key="SettingsEditor" timestamp="1646900038039">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="405" y="196" key="SettingsEditor/0.0.1792.1120@0.0.1792.1120" timestamp="1646900038039" />
+    <state x="619" y="372" key="jetbrains.nodejs.interpreters-dialog" timestamp="1646898656127">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="619" y="372" key="jetbrains.nodejs.interpreters-dialog/0.0.1792.1120@0.0.1792.1120" timestamp="1646898656127" />
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup" timestamp="1646898468954">
+      <screen x="0" y="0" width="1792" height="1120" />
+    </state>
+    <state x="561" y="251" width="670" height="676" key="search.everywhere.popup/0.0.1792.1120@0.0.1792.1120" timestamp="1646898468954" />
   </component>
 </project>
