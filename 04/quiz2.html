@@ -4,6 +4,32 @@
     <meta charset=utf-8 />
     <title>source</title>
 </head>
+<style>
+    .black {
+        background-color: black;
+    }
+
+    .white {
+        background-color: white;
+    }
+
+    .selected {
+        background-color: red;
+    }
+
+    #board {
+        width: 400px;
+        height: 400px;
+        border: solid 5px grey;
+    }
+
+    span {
+        width: 100px;
+        height: 100px;
+        display: block;
+        float: left;
+    }
+</style>
 <body>
 
 <div id="board">
@@ -25,19 +51,48 @@
       <span class="white"></span>
       <span class="black"></span>
     //-->
+
 </div>
 <script>
-    var board = document.getElementById("board");
-    var black_box = '<span class="black"></span>';
-    var white_box = '<span class="white"></span>';
-    var str = "";
-    for(var i=0; i<4; i++){
-        for(var j=0; j<4; j++){
-            // TODO : 여기에 필요한 코드를 작성해주세요.
+var selected = document.querySelector('.selected');
 
-            document.querySelector('board').innerHTML = black_box;
+var className = "";
+var totalBox = 16;
+var str = '';
+
+var board = document.querySelector('#board');
+
+var whatColor = true;
+    for (var i = 0; i < totalBox; i++) {
+        className = whatColor ? "black" : "white"
+        str += '<span class = "' + className + '"></span>';
+        whatColor = !whatColor
+        if (i % 4 === 3) {
+            whatColor = !whatColor
         }
     }
+    board.innerHTML = str;
+
+var boxes = document.querySelectorAll('span');
+
+var selectedBox ={
+    index:-1,
+    className:""
+}
+
+function drawBoards(index) {
+    if(selectedBox.index != -1){
+        boxes[selectedBox.index].className = selectedBox.className
+    }
+    selectedBox.index = index;
+    selectedBox.className = boxes[index].className;
+    boxes[index].className = "selected";
+}
+
+for (let i = 0; i < totalBox; i++) {
+    boxes[i].addEventListener('click',() => drawBoards(i));
+}
+
 </script>
 </body>
 </html>
