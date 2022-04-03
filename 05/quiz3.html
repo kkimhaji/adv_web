@@ -39,10 +39,17 @@
         var $del_btn = document.querySelector('.delete-btn');
         var $txt_btn = document.querySelector('.text-btn');
         var $reset_btn = document.querySelector('.reset-btn');
+        var $toggle_btn = document.querySelector('.toggle-btn');
+        var $img_btn = document.querySelector('.image-btn');
 
+        function box(){
+            var $box = document.querySelectorAll('.box');
+            return $box;
+        }
 
         function toRed(){
-            var $box = document.querySelectorAll('.box');
+
+            var $box = box();
 
             for(var i=0;i<$box.length;i++){
                 $box[i].classList.add('red');
@@ -62,10 +69,9 @@
         }
 
         function addTxt(){
-            var $box = document.querySelectorAll('.box');
+            var $box = box();
 
             var $txt = document.querySelector('.txt');
-            console.log($txt.value);
             var txtValue = $txt.value;
             for(var i=0;i<$box.length;i++){
                 $box[i].innerHTML = txtValue;
@@ -73,10 +79,42 @@
         }
 
         function resetBox(){
-            var $box = document.querySelectorAll('.box');
+            var $box = box();
+
             for(var i=0;i<$box.length;i++){
                 document.body.removeChild($box[i]);
             }
+        }
+
+        function tglBox(){
+            var $box = box();
+            if($box.length){
+                if($box[0].style.visibility == 'hidden'){
+                    for(var i=0;i<$box.length;i++){
+                        $box[i].style.visibility = 'visible';
+                    }
+                }else{
+                    for(var i=0;i<$box.length;i++){
+                        $box[i].style.visibility = 'hidden';
+                    }
+                }
+            }
+        }
+        
+        function showImg(){
+            var $box = box();
+            var src = 'https://i.imgur.com/69NjYBH.png';
+            var str = '<img src='+src+'></img>';
+            if($box.length ==0){
+                addBox();
+                showImg();
+            }
+
+            for(var i=0;i<$box.length;i++){
+                $box[i].innerHTML = str;
+                console.log('img');
+            }
+            //내부로 안들어가는데... 크기가 커서 그런가 ㅠㅠ 
         }
 
         $red_btn.addEventListener('click', toRed);
@@ -84,6 +122,8 @@
         $del_btn.addEventListener('click', delBox);
         $txt_btn.addEventListener('click', addTxt);
         $reset_btn.addEventListener('click', resetBox);
+        $toggle_btn.addEventListener('click', tglBox);
+        $img_btn.addEventListener('click', showImg);
 
     </script>
   </body>
