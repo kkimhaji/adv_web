@@ -38,6 +38,7 @@
         var $add_btn = document.querySelector('.add-btn');
         var $del_btn = document.querySelector('.delete-btn');
         var $txt_btn = document.querySelector('.text-btn');
+        var $reset_btn = document.querySelector('.reset-btn');
 
 
         function toRed(){
@@ -55,9 +56,8 @@
         }
 
         function delBox(){
-            var $box = document.querySelectorAll('.box');
-            if($box.length>0){
-                document.body.removeChild($box[0]);
+            if(document.querySelector('.box')){
+                document.body.removeChild(document.querySelector('.box'));
             }
         }
 
@@ -72,10 +72,18 @@
             }
         }
 
+        function resetBox(){
+            var $box = document.querySelectorAll('.box');
+            for(var i=0;i<$box.length;i++){
+                document.body.removeChild($box[i]);
+            }
+        }
+
         $red_btn.addEventListener('click', toRed);
         $add_btn.addEventListener('click', addBox);
         $del_btn.addEventListener('click', delBox);
         $txt_btn.addEventListener('click', addTxt);
+        $reset_btn.addEventListener('click', resetBox);
 
     </script>
   </body>
