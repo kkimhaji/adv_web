@@ -37,9 +37,12 @@
         var $red_btn = document.querySelector('.add-red');
         var $add_btn = document.querySelector('.add-btn');
         var $del_btn = document.querySelector('.delete-btn');
+        var $txt_btn = document.querySelector('.text-btn');
+
 
         function toRed(){
             var $box = document.querySelectorAll('.box');
+
             for(var i=0;i<$box.length;i++){
                 $box[i].classList.add('red');
                 //+='red'면 계속 class 이름에 red가 추가 
@@ -58,9 +61,21 @@
             }
         }
 
+        function addTxt(){
+            var $box = document.querySelectorAll('.box');
+
+            var $txt = document.querySelector('.txt');
+            console.log($txt.value);
+            var txtValue = $txt.value;
+            for(var i=0;i<$box.length;i++){
+                $box[i].innerHTML = txtValue;
+            }
+        }
+
         $red_btn.addEventListener('click', toRed);
         $add_btn.addEventListener('click', addBox);
         $del_btn.addEventListener('click', delBox);
+        $txt_btn.addEventListener('click', addTxt);
 
     </script>
   </body>
