@@ -32,5 +32,21 @@
     </div>
 
     <div class="box"></div>
+
+    <script>
+        var $red_btn = document.querySelector('.add-red');
+        var $box = document.querySelector('.box');
+        function toRed(){
+            $box.className += ' red';
+            
+            console.log('red');
+        }
+
+        $red_btn.addEventListener('click', toRed);
+
+        function init(){
+
+        }
+    </script>
   </body>
 </html>
