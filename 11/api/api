@@ -1,0 +1,9 @@
+
+
+GET /v2/search/web HTTP/1.1
+Host: dapi.kakao.com
+Authorization: KakaoAK 4c8205a9234f9c019b37d1e3e10e33e8
+
+curl -v -X GET "https://dapi.kakao.com/v2/search/web" \
+--data-urlencode "query=이효리" \
+-H "Authorization: KakaoAK ${REST_API_KEY}"
