@@ -1,11 +1,9 @@
-const url = "https://dapi.kakao.com/v2/search/web?query=#query&page=2";
+let url = "https://dapi.kakao.com/v2/search/web?query=#query&page=";
 const $docs = document.querySelector('#docs');
-// const $query = document.querySelector('#query');
 const $query = document.querySelector('[name="query"]');
-
-const $btn = document.querySelector('#searchBtn');
 const $searchForm = document.querySelector('#searchForm');
-
+const $moreBtn = document.querySelector('#more');
+let page = 1; //페이지 초기값 1
 
 function getFetch(url, callback){
     const headers = {
@@ -19,32 +17,27 @@ function getFetch(url, callback){
 
 function search(){
     const query = $query.value;
-
-    const searchUrl = url.replace('#query', query);
-    //이거처럼 불변으로 만드는 게 더 좋다 
-    // url = url.replace('#query', query);
-
-
+    const searchUrl = url.replace('#query', query) + page.toString(); //url에 추가
+    console.log(searchUrl);
     getFetch(searchUrl, (data) => {
         const { documents } = data;
-        console.log(documents);
     
         const docs = documents.map((document)=>{
-            console.log(document);
             return document.contents;
         });
-        $docs.innerHTML = docs.join('<br> <hr>');
+        $docs.innerHTML += docs.join('<br> <hr>'); //더보기로 내용 추가 때문에 +=로 바꿈
     });
 }
 
 
-// $query.addEventListener('keydown', (event)=>{
-//     if(event.key != 'Enter') return;
-//     search();
-//     // if(event.key == 'Enter') search();
-// });
-
 $searchForm.addEventListener('submit', (event) => {
+    $docs.innerHTML = null; //새로 검색하면 기존 내역 지우기
     search();
     event.preventDefault();
-})
+});
+
+$moreBtn.addEventListener('click', ()=>{
+    page++; //page 증가시키고
+    $docs.innerHTML += '<br><hr>'; //새로 불러오는 것과 기존 내용 구분
+    search(); //다시 검색 결과 불러오기
+});
