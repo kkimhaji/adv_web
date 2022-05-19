@@ -3,15 +3,18 @@
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
-  "private":true,
+  "private": true,
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "start": "webpack serve --open",
+    "watch": "webpack --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "webpack": "^5.72.1",
-    "webpack-cli": "^4.9.2"
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0"
   }
 }

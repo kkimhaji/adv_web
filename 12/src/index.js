@@ -3,3 +3,4 @@ import { sum2 } from './sum.js';
 
 console.log(sum1(1, 2));
 console.log(sum2(2, 2));
+console.log(sum1(13, 1));
