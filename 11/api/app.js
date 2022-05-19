@@ -18,7 +18,6 @@ function getFetch(url, callback){
 function search(){
     const query = $query.value;
     const searchUrl = url.replace('#query', query) + page.toString(); //url에 추가
-    console.log(searchUrl);
     getFetch(searchUrl, (data) => {
         const { documents } = data;
     
@@ -39,5 +38,5 @@ $searchForm.addEventListener('submit', (event) => {
 $moreBtn.addEventListener('click', ()=>{
     page++; //page 증가시키고
     $docs.innerHTML += '<br><hr>'; //새로 불러오는 것과 기존 내용 구분
-    search(); //다시 검색 결과 불러오기
+    search(); //검색
 });
