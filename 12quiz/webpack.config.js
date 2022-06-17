@@ -1,12 +1,22 @@
 const path = require('path');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
+const distPath = path.join(__dirname, 'docs');
 
 module.exports = {
-  entry: './src/index.js',
+  mode: 'production',
+  entry: './src/main.js',
   output: {
     filename: 'main.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: distPath
   },
-  devServer: {
-    static: './dist',
+  devServer:{
+    static:{
+      directory: distPath},
+      port:8088
   },
+  plugins: [
+    new HTMLWebpackPlugin({
+      template: './src/index.html',
+    }),
+  ],
 };
